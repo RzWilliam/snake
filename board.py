@@ -2,7 +2,7 @@ import pygame
 
 
 class Board:
-    def _init_(self):
+    def __init__(self):
         print("Board")
 
     def Draw(screen, size):

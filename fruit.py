@@ -2,11 +2,13 @@ import pygame
 
 
 class Fruit:
-    def _init_(self):
+    def __init__(self):
+        self.image = 0
+        self.color = (170, 215, 81)
+        self.square = 0
         print("Fruit")
 
-    def Draw(screen, x, y, size):
-        img = pygame.image.load('assets/apple.png').convert_alpha()
-        img = pygame.transform.scale(img, (size, size))
-        screen.blit(img, (x, y))
-        pygame.draw.circle(screen, (170, 215, 81), (x, y), 1)
+    def Draw(self, screen, x, y, size):
+        self.image = pygame.transform.scale(pygame.image.load('assets/apple.png').convert_alpha(), (size, size))
+        screen.blit(self.image, (x, y))
+        self.square = pygame.draw.circle(screen, self.color, (x, y), 1)

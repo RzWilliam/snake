@@ -2,13 +2,13 @@ import pygame
 
 
 class Obstacle:
-    def _init_(self):
+    def __init__(self):
+        self.image = pygame.image.load('assets/wall.jpg').convert_alpha()
+        self.color = (170, 215, 81)
         print("Obstacle")
 
-    def Draw(screen,array, size):
-        img = pygame.image.load('assets/wall.jpg').convert_alpha()
-        img = pygame.transform.scale(img, (size, size))
-
+    def Draw(self, screen,array, size):
+        self.image = pygame.transform.scale(self.image, (size, size))
         for x in array:
-            screen.blit(img, (x[0], x[1]))
-            pygame.draw.circle(screen, (170, 215, 81), (x[0], x[1]), 1)
+            screen.blit(self.image, (x[0], x[1]))
+            pygame.draw.circle(screen, self.color, (x[0], x[1]), 1)
