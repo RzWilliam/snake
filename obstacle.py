@@ -7,7 +7,7 @@ class Obstacle:
         self.color = (170, 215, 81)
         print("Obstacle")
 
-    def Draw(self, screen,array, size):
+    def Draw(self, screen, array, size):
         self.image = pygame.transform.scale(self.image, (size, size))
         for x in array:
             screen.blit(self.image, (x[0], x[1]))

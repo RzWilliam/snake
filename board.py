@@ -5,7 +5,7 @@ class Board:
     def __init__(self):
         print("Board")
 
-    def Draw(screen, size):
+    def Draw(self, screen, size):
         for x in range(20):
             for y in range(20):
                 if(x+y) % 2 == 0:
